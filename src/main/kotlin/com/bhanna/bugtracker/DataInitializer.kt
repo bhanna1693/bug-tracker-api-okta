@@ -9,7 +9,7 @@ class DataInitializer(val repository: NotesRepository) : ApplicationRunner {
 
     @Throws(Exception::class)
     override fun run(args: ApplicationArguments) {
-        listOf("com.bhanna.bugtracker.notes.Note 1", "com.bhanna.bugtracker.notes.Note 2", "com.bhanna.bugtracker.notes.Note 3").forEach {
+        listOf("Note 1", "Note 2", "Note 3").forEach {
             repository.save(Note(title = it, user = "user"))
         }
         repository.findAll().forEach { println(it) }
