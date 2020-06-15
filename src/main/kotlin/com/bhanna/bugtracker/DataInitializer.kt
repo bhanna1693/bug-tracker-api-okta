@@ -9,6 +9,7 @@ class DataInitializer(val repository: NotesRepository) : ApplicationRunner {
 
     @Throws(Exception::class)
     override fun run(args: ApplicationArguments) {
+        println("THIS LINE SHOULD BE PRINTING TO THE CONSOLE")
         listOf("Note 1", "Note 2", "Note 3").forEach {
             repository.save(Note(title = it, user = "user"))
         }
